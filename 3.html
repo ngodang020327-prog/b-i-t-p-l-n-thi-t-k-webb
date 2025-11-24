@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinh Dưỡng Vàng - Khỏe Mạnh Tuổi Già</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            font-size: 18px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-block;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #5a67d8;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(102, 126, 234, 0.85), rgba(118, 75, 162, 0.85)),
+                        url('https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        h2 {
+            font-size: 2.3rem;
+            color: #5a67d8;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .benefit-card img {
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .nutrition-tips {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .tip-item {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+        }
+
+        .tip-item h4 {
+            color: #5a67d8;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .food-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .food-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .food-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .food-item img {
+            transition: transform 0.3s;
+        }
+
+        .food-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .food-emoji {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .food-item h4 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .food-item p {
+            line-height: 1.6;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-title {
+            color: #667eea;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            padding: 0.6rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .product-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-current {
+            font-size: 2rem;
+            color: #FF6B6B;
+            font-weight: bold;
+        }
+
+        .price-original {
+            font-size: 1.2rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .product-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .product-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .promo-banner {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .countdown {
+            display: inline-flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .countdown-item {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .price-breakdown {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            border: 2px dashed #667eea;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .price-row.total {
+            border-top: 2px solid #667eea;
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #FF6B6B;
+        }
+
+        .savings-highlight {
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin: 1rem 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #FF6B6B;
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateX(10px);
+        }
+
+        .event-date {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 2rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            #nguyen-tac div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            #lien-he form {
+                padding: 0 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo svg {
+                width: 110px !important;
+                height: 110px !important;
+            }
+
+            .product-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Promotional Banner -->
+    <div class="promo-banner">
+        🎉 KHUYẾN MÃI ĐẶC BIỆT: GIẢM ĐẾN 25% - TẶNG QUÀ TRỊ GIÁ 500.000Đ 🎉
+        <div class="countdown" id="countdown">
+            <div class="countdown-item"><span id="days">00</span> Ngày</div>
+            <div class="countdown-item"><span id="hours">00</span> Giờ</div>
+            <div class="countdown-item"><span id="minutes">00</span> Phút</div>
+            <div class="countdown-item"><span id="seconds">00</span> Giây</div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <!-- Gradient definitions -->
+                            <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#81C784;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF9800;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#FFB74D;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#f5f5f5;stop-opacity:1" />
+                            </linearGradient>
+                            <filter id="shadow">
+                                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Background circle -->
+                        <circle cx="70" cy="70" r="65" fill="url(#whiteGradient)" filter="url(#shadow)"/>
+                        
+                        <!-- Decorative circles -->
+                        <circle cx="70" cy="70" r="60" fill="none" stroke="url(#greenGradient)" stroke-width="3" opacity="0.3"/>
+                        <circle cx="70" cy="70" r="55" fill="none" stroke="url(#orangeGradient)" stroke-width="2" opacity="0.3"/>
+                        
+                        <!-- Leaf design (left) -->
+                        <g transform="translate(30, 70)">
+                            <ellipse cx="0" cy="0" rx="18" ry="28" fill="url(#greenGradient)" transform="rotate(-20)"/>
+                            <path d="M 0,-28 Q 0,0 0,28" stroke="#2E7D32" stroke-width="2" fill="none"/>
+                            <path d="M 0,-15 Q 8,-10 8,0" stroke="#2E7D32" stroke-width="1.5" fill="none" opacity="0.6"/>
+                            <path d="M 0,0 Q 8,5 8,15" stroke="#2E7D32" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        </g>
+                        
+                        <!-- Apple design (right) -->
+                        <g transform="translate(110, 70)">
+                            <circle cx="0" cy="0" r="22" fill="url(#orangeGradient)"/>
+                            <ellipse cx="-3" cy="-2" rx="18" ry="20" fill="url(#orangeGradient)"/>
+                            <ellipse cx="8" cy="8" rx="10" ry="12" fill="#fff" opacity="0.3"/>
+                            <path d="M 0,-20 Q -2,-26 -5,-24" stroke="#6D4C41" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                            <ellipse cx="-3" cy="-22" rx="4" ry="3" fill="url(#greenGradient)" transform="rotate(-30 -3 -22)"/>
+                        </g>
+                        
+                        <!-- Center text NĐ -->
+                        <g transform="translate(70, 70)">
+                            <!-- Shadow for text -->
+                            <text x="0" y="2" font-size="42" font-weight="900" fill="rgba(0,0,0,0.1)" text-anchor="middle" dominant-baseline="middle" font-family="'Arial Black', sans-serif">NĐ</text>
+                            <!-- Main text with gradient -->
+                            <text x="0" y="0" font-size="42" font-weight="900" fill="url(#greenGradient)" text-anchor="middle" dominant-baseline="middle" font-family="'Arial Black', sans-serif">NĐ</text>
+                        </g>
+                        
+                        <!-- Bottom banner -->
+                        <rect x="25" y="115" width="90" height="18" rx="9" fill="url(#greenGradient)" opacity="0.9"/>
+                        <text x="70" y="127" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="1">DINH DƯỠNG</text>
+                        
+                        <!-- Decorative dots -->
+                        <circle cx="20" cy="20" r="3" fill="url(#orangeGradient)" opacity="0.6"/>
+                        <circle cx="120" cy="20" r="3" fill="url(#greenGradient)" opacity="0.6"/>
+                        <circle cx="20" cy="120" r="3" fill="url(#greenGradient)" opacity="0.6"/>
+                        <circle cx="120" cy="120" r="3" fill="url(#orangeGradient)" opacity="0.6"/>
+                    </svg>
+                </div>
+                
+                <div class="header-text">
+                    <h1>🌟 Dinh Dưỡng Vàng</h1>
+                    <p class="tagline">Chăm sóc sức khỏe - Tận hưởng tuổi già</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#loi-ich">Lợi Ích</a></li>
+                <li><a href="#san-pham">Sản Phẩm</a></li>
+                <li><a href="#nguyen-tac">Nguyên Tắc</a></li>
+                <li><a href="#thuc-pham">Thực Phẩm</a></li>
+                <li><a href="#lien-he">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Dinh Dưỡng Đúng Cách - Sống Khỏe Trọn Đời</h2>
+            <p>Chế độ dinh dưỡng phù hợp giúp người cao tuổi duy trì sức khỏe, phòng ngừa bệnh tật và nâng cao chất lượng cuộc sống</p>
+        </div>
+    </section>
+
+    <section id="loi-ich">
+        <div class="container">
+            <h2>Lợi Ích Dinh Dưỡng Tốt Cho Người Cao Tuổi</h2>
+            
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1200&q=80" 
+                     alt="Người cao tuổi khỏe mạnh" 
+                     style="max-width: 100%; height: 400px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=300&q=80" alt="Người cao tuổi tập thể dục" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h3>Tăng Cường Sức Khỏe</h3>
+                    <p>Cung cấp năng lượng và dưỡng chất cần thiết để duy trì hoạt động hàng ngày, giúp cơ thể khỏe mạnh và linh hoạt hơn.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&q=80" alt="Trí nhớ tốt" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h3>Cải Thiện Trí Nhớ</h3>
+                    <p>Dinh dưỡng đầy đủ giúp não bộ hoạt động tốt, cải thiện khả năng ghi nhớ và phòng ngừa sa sút trí tuệ.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=300&q=80" alt="Xương khỏe" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h3>Xương Chắc Khỏe</h3>
+                    <p>Bổ sung canxi và vitamin D giúp xương chắc khỏe, phòng ngừa loãng xương và gãy xương ở tuổi già.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=300&q=80" alt="Tim mạch khỏe" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h3>Bảo Vệ Tim Mạch</h3>
+                    <p>Chế độ ăn lành mạnh giúp kiểm soát huyết áp, cholesterol, giảm nguy cơ bệnh tim mạch và đột quỵ.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300&q=80" alt="Hệ miễn dịch" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h3>Tăng Miễn Dịch</h3>
+                    <p>Cung cấp vitamin, khoáng chất giúp tăng cường hệ miễn dịch, phòng ngừa nhiễm trùng và bệnh tật.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="https://images.unsplash.com/photo-1609619385002-f40bc61e05f9?w=300&q=80" alt="Người cao tuổi vui vẻ" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h3>Tinh Thần Vui Vẻ</h3>
+                    <p>Dinh dưỡng cân bằng giúp cải thiện tâm trạng, giảm căng thẳng và nâng cao chất lượng cuộc sống.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="san-pham">
+        <div class="container">
+            <h2>Sản Phẩm Dinh Dưỡng Đặc Biệt</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 1rem;">
+                Các sản phẩm dinh dưỡng được nghiên cứu và phát triển đặc biệt cho người cao tuổi
+            </p>
+
+            <!-- Product Functions Introduction -->
+            <div style="background: linear-gradient(135deg, #667eea15, #764ba215); padding: 3rem; border-radius: 20px; margin: 2rem 0 3rem;">
+                <h3 style="color: #667eea; font-size: 1.8rem; text-align: center; margin-bottom: 2rem;">Tại Sao Chọn Sản Phẩm Của Chúng Tôi?</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔬</div>
+                        <h4 style="color: #667eea; font-size: 1.4rem; margin-bottom: 1rem;">Nghiên Cứu Khoa Học</h4>
+                        <p style="color: #666; line-height: 1.8;">Công thức được phát triển bởi các chuyên gia dinh dưỡng hàng đầu, dựa trên nghiên cứu về nhu cầu đặc biệt của người cao tuổi Việt Nam.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                        <h4 style="color: #667eea; font-size: 1.4rem; margin-bottom: 1rem;">Chất Lượng Đảm Bảo</h4>
+                        <p style="color: #666; line-height: 1.8;">Sản phẩm đạt chuẩn ISO, FDA, được kiểm định chặt chẽ về thành phần và quy trình sản xuất, đảm bảo an toàn tuyệt đối.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">💚</div>
+                        <h4 style="color: #667eea; font-size: 1.4rem; margin-bottom: 1rem;">Thành Phần Tự Nhiên</h4>
+                        <p style="color: #666; line-height: 1.8;">Ưu tiên sử dụng nguyên liệu tự nhiên, không chất bảo quản độc hại, phù hợp với cơ địa người Việt, dễ hấp thu và tiêu hóa.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                        <h4 style="color: #667eea; font-size: 1.4rem; margin-bottom: 1rem;">Hiệu Quả Rõ Rệt</h4>
+                        <p style="color: #666; line-height: 1.8;">Hơn 10,000 người cao tuổi tin dùng, 95% phản hồi tích cực về sự cải thiện sức khỏe, năng lượng và chất lượng cuộc sống.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-showcase">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">BÁN CHẠY</div>
+                    <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=600&q=80" alt="Sữa dinh dưỡng" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Sữa Dinh Dưỡng Vàng</h3>
+                        <p class="product-description">
+                            Sữa bột cao cấp dành riêng cho người cao tuổi, bổ sung canxi, vitamin D3, protein và các khoáng chất thiết yếu giúp xương chắc khỏe.
+                        </p>
+                        <ul class="product-features">
+                            <li>Giàu Canxi & Vitamin D3 tăng cường xương khớp</li>
+                            <li>Protein chất lượng cao duy trì cơ bắp</li>
+                            <li>Omega-3 tốt cho tim mạch và não bộ</li>
+                            <li>Dễ hòa tan, dễ tiêu hóa</li>
+                        </ul>
+                        
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span>Giá gốc:</span>
+                                <span style="text-decoration: line-through; color: #999;">550.000đ</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Giảm giá (18%):</span>
+                                <span style="color: #4CAF50;">-100.000đ</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Giá ưu đãi:</span>
+                                <span style="color: #FF6B6B;">450.000đ</span>
+                            </div>
+                        </div>
+                        
+                        <div class="savings-highlight">
+                            🎁 Mua 2 hộp tặng 1 gói ngũ cốc (trị giá 150.000đ)
+                        </div>
+                        
+                        <a href="#lien-he" class="product-button">Đặt Hàng Ngay</a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge" style="background: linear-gradient(135deg, #4CAF50, #81C784);">MỚI</div>
+                    <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&q=80" alt="Vitamin tổng hợp" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Vitamin Tổng Hợp Senior+</h3>
+                        <p class="product-description">
+                            Bộ vitamin và khoáng chất toàn diện, được thiết kế đặc biệt cho nhu cầu của người trên 60 tuổi, tăng cường sức đề kháng.
+                        </p>
+                        <ul class="product-features">
+                            <li>12 vitamin thiết yếu cho sức khỏe</li>
+                            <li>Tăng cường hệ miễn dịch tự nhiên</li>
+                            <li>Cải thiện trí nhớ và tập trung</li>
+                            <li>An toàn, không tác dụng phụ</li>
+                        </ul>
+                        
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span>Giá gốc:</span>
+                                <span style="text-decoration: line-through; color: #999;">400.000đ</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Giảm giá (20%):</span>
+                                <span style="color: #4CAF50;">-80.000đ</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Giá ưu đãi:</span>
+                                <span style="color: #FF6B6B;">320.000đ</span>
+                            </div>
+                        </div>
+                        
+                        <div class="savings-highlight">
+                            🎁 Mua 3 hộp giảm thêm 10% + Tặng sổ tay sức khỏe
+                        </div>
+                        
+                        <a href="#lien-he" class="product-button">Đặt Hàng Ngay</a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge" style="background: linear-gradient(135deg, #667eea, #764ba2);">ƯU ĐÃI</div>
+                    <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=600&q=80" alt="Ngũ cốc dinh dưỡng" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Ngũ Cốc Dinh Dưỡng</h3>
+                        <p class="product-description">
+                            Hỗn hợp ngũ cốc nguyên hạt với hạt óc chó, hạnh nhân và yến mạch, cung cấp năng lượng bền vững cho cả ngày dài.
+                        </p>
+                        <ul class="product-features">
+                            <li>100% ngũ cốc nguyên hạt tự nhiên</li>
+                            <li>Giàu chất xơ, hỗ trợ tiêu hóa</li>
+                            <li>Kiểm soát đường huyết hiệu quả</li>
+                            <li>Dễ chế biến, tiện lợi</li>
+                        </ul>
+                        
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span>Giá gốc:</span>
+                                <span style="text-decoration: line-through; color: #999;">350.000đ</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Giảm giá (20%):</span>
+                                <span style="color: #4CAF50;">-70.000đ</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Giá ưu đãi:</span>
+                                <span style="color: #FF6B6B;">280.000đ</span>
+                            </div>
+                        </div>
+                        
+                        <div class="savings-highlight">
+                            🎁 Combo 5 túi chỉ 1.200.000đ (giảm 200.000đ)
+                        </div>
+                        
+                        <a href="#lien-he" class="product-button">Đặt Hàng Ngay</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Offer Banner -->
+            <div style="background: linear-gradient(135deg, #FFD700, #FFA500); padding: 2.5rem; border-radius: 20px; margin-top: 3rem; text-align: center; box-shadow: 0 10px 30px rgba(255, 165, 0, 0.3);">
+                <h3 style="color: white; font-size: 2rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">🎁 Ưu Đãi Đặc Biệt</h3>
+                <p style="color: white; font-size: 1.3rem; margin-bottom: 1.5rem;">Mua 2 sản phẩm bất kỳ - Giảm ngay 15%</p>
+                <p style="color: white; font-size: 1.1rem;">Tặng kèm sổ tay theo dõi sức khỏe & tư vấn dinh dưỡng miễn phí</p>
+            </div>
+
+            <!-- Events & Promotions Section -->
+            <div style="margin-top: 4rem;">
+                <h3 style="color: #667eea; font-size: 2rem; text-align: center; margin-bottom: 2rem;">📅 Sự Kiện & Khuyến Mãi Sắp Tới</h3>
+                
+                <div class="event-card">
+                    <span class="event-date">🎉 01/12 - 15/12/2024</span>
+                    <h4 style="color: #667eea; font-size: 1.6rem; margin-bottom: 1rem;">NGÀY HỘI DINH DƯỠNG VÀNG</h4>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 1rem;">
+                        Đón chào tháng 12 với chương trình ưu đãi khủng: Giảm giá đến <strong style="color: #FF6B6B;">25%</strong> toàn bộ sản phẩm, tặng kèm voucher giảm giá lần sau và quà tặng may mắn cho 100 khách hàng đầu tiên.
+                    </p>
+                    <ul style="color: #666; line-height: 2; padding-left: 2rem;">
+                        <li>💝 Giảm 25% tất cả sản phẩm</li>
+                        <li>🎁 Tặng quà trị giá 500.000đ cho đơn hàng từ 2 triệu</li>
+                        <li>🎟️ Voucher 200.000đ cho lần mua tiếp theo</li>
+                        <li>🎊 Quay số may mắn trúng thẻ quà tặng</li>
+                    </ul>
+                </div>
+
+                <div class="event-card">
+                    <span class="event-date">🎅 20/12 - 31/12/2024</span>
+                    <h4 style="color: #667eea; font-size: 1.6rem; margin-bottom: 1rem;">CHƯƠNG TRÌNH GIÁNG SINH YÊU THƯƠNG</h4>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 1rem;">
+                        Mùa Giáng Sinh - Mùa của tình yêu thương! Chúng tôi dành tặng những ưu đãi đặc biệt để bạn có thể chăm sóc sức khỏe người thân yêu.
+                    </p>
+                    <ul style="color: #666; line-height: 2; padding-left: 2rem;">
+                        <li>🎄 Combo quà tặng sức khỏe - Giảm 30%</li>
+                        <li>📦 Miễn phí giao hàng toàn quốc</li>
+                        <li>💌 Thiệp chúc mừng & đóng gói quà miễn phí</li>
+                        <li>👨‍⚕️ Tư vấn dinh dưỡng 1-1 miễn phí từ chuyên gia</li>
+                    </ul>
+                </div>
+
+                <div class="event-card">
+                    <span class="event-date">🎊 01/01 - 10/01/2025</span>
+                    <h4 style="color: #667eea; font-size: 1.6rem; margin-bottom: 1rem;">ĐÓN TẾT - SỐNG KHỎE</h4>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 1rem;">
+                        Bắt đầu năm mới với sức khỏe dồi dào! Chương trình tri ân khách hàng đầu năm với những ưu đãi không thể bỏ lỡ.
+                    </p>
+                    <ul style="color: #666; line-height: 2; padding-left: 2rem;">
+                        <li>🧧 Mở bao lì xì may mắn - Trúng quà đến 2 triệu đồng</li>
+                        <li>🎁 Tặng combo quà tặng sức khỏe cho người thân</li>
+                        <li>🏆 Giảm 20% toàn bộ sản phẩm</li>
+                        <li>📞 Hotline hỗ trợ 24/7 trong dịp Tết</li>
+                    </ul>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 2.5rem; border-radius: 15px; text-align: center; margin-top: 2rem;">
+                    <h4 style="font-size: 1.8rem; margin-bottom: 1rem;">💳 CHƯƠNG TRÌNH TÍCH ĐIỂM THÀNH VIÊN</h4>
+                    <p style="font-size: 1.2rem; line-height: 1.8;">
+                        Đăng ký thành viên ngay hôm nay để nhận ưu đãi độc quyền, tích điểm đổi quà và được tư vấn dinh dưỡng miễn phí suốt đời!
+                    </p>
+                    <div style="margin-top: 1.5rem; display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                        <span style="background: rgba(255,255,255,0.2); padding: 0.8rem 1.5rem; border-radius: 25px; backdrop-filter: blur(10px);">✨ Tích 1 điểm = 1.000đ</span>
+                        <span style="background: rgba(255,255,255,0.2); padding: 0.8rem 1.5rem; border-radius: 25px; backdrop-filter: blur(10px);">🎁 100 điểm = 1 sản phẩm miễn phí</span>
+                        <span style="background: rgba(255,255,255,0.2); padding: 0.8rem 1.5rem; border-radius: 25px; backdrop-filter: blur(10px);">🎂 Quà sinh nhật đặc biệt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nguyen-tac">
+        <div class="container">
+            <h2>Nguyên Tắc Dinh Dưỡng Cơ Bản</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; margin-bottom: 2rem;">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=800&q=80" 
+                         alt="Bữa ăn lành mạnh" 
+                         style="width: 100%; height: 350px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80" 
+                         alt="Rau củ tươi" 
+                         style="width: 100%; height: 350px; object-fit: cover; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                </div>
+            </div>
+            
+            <div class="nutrition-tips">
+                <div class="tip-item">
+                    <h4>1. Ăn Đủ Bữa, Đúng Giờ</h4>
+                    <p>Chia nhỏ thành 5-6 bữa nhẹ trong ngày thay vì 3 bữa chính. Ăn đúng giờ giúp tiêu hóa tốt hơn và duy trì năng lượng ổn định. Đặc biệt, không nên bỏ bữa sáng vì đây là bữa quan trọng nhất trong ngày, cung cấp năng lượng cho hoạt động cả ngày. Bữa tối nên ăn nhẹ và sớm, tránh ăn quá no trước khi ngủ để hệ tiêu hóa có thời gian nghỉ ngơi.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>2. Đa Dạng Thực Phẩm</h4>
+                    <p>Kết hợp nhiều loại thực phẩm khác nhau: ngũ cốc, rau củ, trái cây, protein, sữa và chế phẩm để đảm bảo đủ dưỡng chất. Mỗi nhóm thực phẩm mang lại những giá trị dinh dưỡng riêng biệt. Nên ăn ít nhất 5 màu sắc rau củ quả khác nhau mỗi ngày để cơ thể nhận được đầy đủ vitamin, khoáng chất và chất chống oxy hóa. Luân phiên các loại thực phẩm để tránh nhàm chán và đảm bảo cân bằng dinh dưỡng.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>3. Uống Đủ Nước</h4>
+                    <p>Uống ít nhất 1.5-2 lít nước mỗi ngày. Người cao tuổi dễ mất nước nên cần bổ sung nước thường xuyên dù không khát. Nước giúp thải độc, điều hòa nhiệt độ cơ thể, bôi trơn khớp và hỗ trợ tiêu hóa. Nên uống nước ấm hoặc nước ở nhiệt độ phòng, tránh nước quá lạnh. Có thể bổ sung thêm nước trái cây tự nhiên, trà thảo mộc, nước dừa để tăng hương vị. Hạn chế đồ uống có cồn, caffeine và đường.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>4. Hạn Chế Muối, Đường, Mỡ</h4>
+                    <p>Giảm muối để kiểm soát huyết áp (không quá 5g/ngày), hạn chế đường tinh luyện để phòng ngừa tiểu đường và béo phì, giảm mỡ bão hòa để bảo vệ tim mạch. Thay thế muối bằng gia vị thảo mộc như gừng, tỏi, hành. Sử dụng dầu thực vật như dầu ô liu, dầu hạt lanh thay cho mỡ động vật. Hạn chế thực phẩm chế biến sẵn, đồ hộp, thức ăn nhanh vì chứa nhiều muối, đường và chất bảo quản.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>5. Thực Phẩm Mềm, Dễ Tiêu</h4>
+                    <p>Chế biến thực phẩm mềm, dễ nhai và dễ tiêu hóa do người cao tuổi thường có vấn đề về răng miệng và hệ tiêu hóa yếu. Nấu kỹ, cắt nhỏ hoặc nghiền nếu cần thiết. Ưu tiên các món hấp, luộc, hầm thay vì chiên, rán. Thực phẩm nên được nấu chín mềm nhưng vẫn giữ được giá trị dinh dưỡng. Tránh thực phẩm cứng, dai, khó nuốt có thể gây nghẹn hoặc khó tiêu.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>6. Bổ Sung Chất Xơ</h4>
+                    <p>Ăn nhiều rau xanh, trái cây, ngũ cốc nguyên hạt để cung cấp chất xơ, giúp hệ tiêu hóa hoạt động tốt, phòng ngừa táo bón - vấn đề phổ biến ở người cao tuổi. Chất xơ còn giúp kiểm soát đường huyết, giảm cholesterol và duy trì cân nặng hợp lý. Tuy nhiên, tăng chất xơ từ từ và uống nhiều nước để tránh đầy hơi.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>7. Protein Chất Lượng Cao</h4>
+                    <p>Protein rất quan trọng để duy trì khối lượng cơ, ngăn ngừa suy giảm cơ ở người cao tuổi. Nên ăn protein từ nhiều nguồn: cá, thịt nạc, trứng, đậu, các loại hạt. Đặc biệt ưu tiên cá biển giàu omega-3 như cá hồi, cá thu. Người cao tuổi cần khoảng 1-1.2g protein/kg cân nặng mỗi ngày. Chia đều protein vào các bữa ăn trong ngày để cơ thể hấp thu tốt nhất.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>8. Bổ Sung Canxi & Vitamin D</h4>
+                    <p>Người cao tuổi dễ bị loãng xương nên cần bổ sung đủ canxi (1000-1200mg/ngày) từ sữa, sữa chua, phô mai, cá nhỏ ăn xương, rau xanh đậm. Vitamin D giúp hấp thu canxi tốt hơn, có thể lấy từ ánh nắng mặt trời buổi sáng (15-20 phút/ngày), trứng, cá béo hoặc thực phẩm bổ sung. Kết hợp với vận động nhẹ nhàng để xương chắc khỏe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="thuc-pham">
+        <div class="container">
+            <h2>Thực Phẩm Nên Ăn</h2>
+            
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=80" 
+                     alt="Thực phẩm tươi sạch" 
+                     style="max-width: 100%; height: 400px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            </div>
+            
+            <div class="food-list">
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=80" alt="Rau xanh tươi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h4>Rau Xanh</h4>
+                    <p>Cải xanh, rau muống, súp lơ giàu vitamin, chất xơ</p>
+                </div>
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&q=80" alt="Cá hồi tươi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h4>Cá Biển</h4>
+                    <p>Cá hồi, cá thu giàu omega-3 tốt cho tim mạch</p>
+                </div>
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=400&q=80" alt="Sữa chua và sữa" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h4>Sữa & Sản Phẩm</h4>
+                    <p>Sữa tươi, sữa chua, phô mai bổ sung canxi</p>
+                </div>
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=400&q=80" alt="Trái cây tươi" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h4>Trái Cây Tươi</h4>
+                    <p>Táo, chuối, cam giàu vitamin và chất chống oxi hóa</p>
+                </div>
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80" alt="Yến mạch và ngũ cốc" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h4>Ngũ Cốc Nguyên Hạt</h4>
+                    <p>Yến mạch, gạo lứt cung cấp năng lượng lâu dài</p>
+                </div>
+                <div class="food-item">
+                    <img src="https://images.unsplash.com/photo-1508747703725-719777637510?w=400&q=80" alt="Hạt dinh dưỡng" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+                    <h4>Hạt Dinh Dưỡng</h4>
+                    <p>Hạnh nhân, óc chó giàu protein và chất béo tốt</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="lien-he">
+        <div class="container">
+            <h2 style="color: white;">Bắt Đầu Hành Trình Khỏe Mạnh Ngay Hôm Nay</h2>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">Đăng ký nhận tư vấn dinh dưỡng miễn phí từ chuyên gia</p>
+            
+            <div style="background: white; border-radius: 20px; padding: 3rem; margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                <h3 style="color: #667eea; font-size: 2rem; margin-bottom: 2rem;">Thông Tin Liên Hệ</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: left;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=150&q=80" alt="Phone icon" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <p style="color: #666; margin-bottom: 0.3rem; font-size: 0.95rem;">Hotline</p>
+                            <a href="tel:0976741319" style="color: #667eea; font-size: 1.3rem; font-weight: bold; text-decoration: none;">0976 741 319</a>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=150&q=80" alt="Email icon" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div>
+                            <p style="color: #666; margin-bottom: 0.3rem; font-size: 0.95rem;">Email</p>
+                            <a href="mailto:ngodang020327@gmail.com" style="color: #667eea; font-size: 1.1rem; font-weight: bold; text-decoration: none; word-break: break-all;">ngodang020327@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 2px solid #f0f0f0;">
+                    <p style="color: #666; font-size: 1.1rem; margin-bottom: 1.5rem;">Gửi tin nhắn cho chúng tôi:</p>
+                    <form style="display: flex; flex-direction: column; gap: 1rem;">
+                        <input type="text" placeholder="Họ và tên" style="padding: 1rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; transition: border 0.3s;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+                        <input type="tel" placeholder="Số điện thoại" style="padding: 1rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; transition: border 0.3s;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'">
+                        <textarea placeholder="Nội dung tin nhắn" rows="4" style="padding: 1rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; resize: vertical; transition: border 0.3s;" onfocus="this.style.borderColor='#667eea'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
+                        <button type="submit" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.2rem; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 20px rgba(102, 126, 234, 0.4)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dinh Dưỡng Vàng. Chăm sóc sức khỏe người cao tuổi.</p>
+            <p style="margin-top: 0.5rem;">
+                📞 Hotline: <a href="tel:0976741319" style="color: #FDB44B; text-decoration: none;">0976 741 319</a> | 
+                ✉️ Email: <a href="mailto:ngodang020327@gmail.com" style="color: #FDB44B; text-decoration: none;">ngodang020327@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const endDate = new Date('2024-12-15T23:59:59').getTime();
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div style="padding: 1rem;">Chương trình đã kết thúc</div>';
+            }
+        }
+
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
